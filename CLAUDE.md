@@ -2,24 +2,30 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Project Overview
+
+Professional website for Koda LLC AI & Computer Vision consulting. Features modern animations, dynamic interactions, and responsive design.
+
 ## Development
 
-Static website for Koda AI Tools. Open `index.html` in browser to test locally.
+- **Local testing**: Open `index.html` in browser or use Live Server
+- **Tech stack**: HTML5, CSS3, Vanilla JavaScript
+- **Key features**: Animated gradients, scroll animations, parallax effects, interactive elements
 
 ## Deployment
 
-### GitHub Pages Setup
-1. Go to repository Settings → Pages
-2. Select `main` branch, `/ (root)` folder
-3. Site available at: `https://kodaai-dev.github.io/company_website`
+**Current setup**: GitHub Pages with subdomain
+- Site: https://site.kodaaitools.com
+- GitHub Pages: https://kodaai-dev.github.io/company_website
 
-### Custom Domain (kodaaitools.com)
-**CNAME file already exists** with `kodaaitools.com`
+**Desired setup**: Root domain (requires DNS migration)
+- Target: https://kodaaitools.com
 
-1. In GitHub Pages settings, add custom domain: `kodaaitools.com`
-2. Check "Enforce HTTPS"
-3. Configure DNS with domain provider:
-   - **CNAME record**: `kodaaitools.com` → `kodaai-dev.github.io`
-   - **Or A records** to GitHub IPs: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
+### DNS Migration to Cloudflare
+1. Add domain to Cloudflare (free account)
+2. Update nameservers in Squarespace to Cloudflare's
+3. Import existing DNS records (especially Google Workspace MX records)
+4. Add A records pointing to GitHub Pages IPs
+5. Update CNAME file from `site.kodaaitools.com` to `kodaaitools.com`
 
-DNS propagation takes 5-10 minutes. Site will be live at `https://kodaaitools.com`
+**GitHub Pages IPs**: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
