@@ -10,7 +10,7 @@ Open `index.html` in your browser to test locally.
 
 Website is automatically deployed via GitHub Pages when pushing to `main` branch.
 
-- **GitHub Pages URL**: https://koda-ai-dev.github.io/company_website
+- **GitHub Pages URL**: https://kodaai-dev.github.io/company_website
 - **Custom Domain**: https://kodaaitools.com
 
 ## Setup
