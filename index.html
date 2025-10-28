@@ -3,47 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koda AI Tools</title>
+    <title>Koda LLC - AI & Computer Vision Solutions</title>
+    <meta name="description" content="Koda LLC provides enterprise-grade AI and computer vision solutions. From consulting to pre-trained models, we modernize businesses with pragmatic AI systems.">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
         .container {
-            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
-            padding: 2rem;
+            padding: 2rem 0;
+            text-align: center;
         }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
-        p {
+
+        .tagline {
             font-size: 1.2rem;
             opacity: 0.9;
-            margin-bottom: 2rem;
+            font-weight: 300;
         }
-        .badge {
-            background: rgba(255,255,255,0.2);
+
+        nav {
+            background: #34495e;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
             padding: 0.5rem 1rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #555;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+        }
+
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #34495e;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #3498db;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stats {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat {
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #3498db;
+        }
+
+        footer {
+            background: #34495e;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .contact-info {
+            background: #ecf0f1;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🤖 Koda AI Tools</h1>
-        <p>Powerful AI tools for developers and businesses</p>
-        <div class="badge">Coming Soon</div>
-    </div>
+    <header>
+        <div class="container">
+            <div class="logo">Koda LLC</div>
+            <div class="tagline">Enterprise AI & Computer Vision Solutions</div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Modernize Your Business with Pragmatic AI</h1>
+            <p>We provide high-quality, affordable software consulting and enterprise-grade computer vision products. From discovery to deployment, we help SMBs and mid-market companies implement production-ready AI solutions.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn">Start Your Project</a>
+                <a href="#services" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">$100</div>
+                    <div>Introductory Rate per Hour</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">18+</div>
+                    <div>Years Combined Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div>Senior Engineering Team</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Discovery & Evaluation</h3>
+                    <p>Fixed-scope technical assessments at our introductory $100/hour rate to define requirements, assess risk, and create implementation plans.</p>
+                    <ul>
+                        <li>Technical feasibility analysis</li>
+                        <li>ROI projections</li>
+                        <li>Implementation roadmap</li>
+                        <li>Risk assessment</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Custom Implementation</h3>
+                    <p>Fixed-bid or time-and-materials engineering for web/ML integrations, data pipelines, AI-assisted workflows, and computer vision proof-of-concepts.</p>
+                    <ul>
+                        <li>Web & ML integrations</li>
+                        <li>Data pipeline development</li>
+                        <li>AI workflow automation</li>
+                        <li>Computer vision PoCs</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Ongoing Support</h3>
+                    <p>Retainer-based maintenance, upgrades, and reliability services to ensure your AI systems continue delivering value.</p>
+                    <ul>
+                        <li>System maintenance</li>
+                        <li>Performance monitoring</li>
+                        <li>Feature upgrades</li>
+                        <li>24/7 support options</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2>Enterprise Products</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Pre-trained Computer Vision Models</h3>
+                    <p>Industry-specific CV models that outperform generic APIs, deployable on-premises or in your VPC with enterprise-grade security and support.</p>
+                    <ul>
+                        <li>Manufacturing QA & defect detection</li>
+                        <li>Retail operations & compliance</li>
+                        <li>Media content safety & analysis</li>
+                        <li>Custom domain adaptation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Enterprise Features</h3>
+                    <p>Full enterprise deployment options with the security, compliance, and integration features your organization requires.</p>
+                    <ul>
+                        <li>On-premises or VPC deployment</li>
+                        <li>SSO & RBAC integration</li>
+                        <li>Audit logging & compliance</li>
+                        <li>API SDKs & documentation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Support & Customization</h3>
+                    <p>Bronze, Silver, and Gold support tiers with optional 24/7 coverage, plus paid fine-tuning and domain adaptation services.</p>
+                    <ul>
+                        <li>Model customization & fine-tuning</li>
+                        <li>Dataset labeling services</li>
+                        <li>Tiered support SLAs</li>
+                        <li>Optional 24/7 coverage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="container">
+            <h2>Leadership Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3>Fred Lin</h3>
+                    <p><strong>CEO</strong></p>
+                    <p>B.S. Computer Science (USC). 8 years building distributed systems in fintech, social, and real estate. Leads business operations, client success, partnerships, and strategic roadmap.</p>
+                </div>
+
+                <div class="team-member">
+                    <h3>Lou Lin</h3>
+                    <p><strong>Chief Engineer</strong></p>
+                    <p>M.S. Robotics (UPenn). ~10 years in ML/CV including self-driving cars and large-scale streaming services. Leads AI R&D, architecture, and technical delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-info" id="contact">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Let's discuss how Koda can help modernize your business with practical AI solutions.</p>
+            <div style="margin-top: 2rem;">
+                <p><strong>Location:</strong> Greater Seattle, Washington (serving clients nationally)</p>
+                <p><strong>Company:</strong> Koda LLC, Washington State</p>
+            </div>
+            <div style="margin-top: 2rem;">
+                <a href="mailto:hello@kodaaitools.com" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Koda LLC. All rights reserved. | Washington State</p>
+        </div>
+    </footer>
 </body>
 </html>
